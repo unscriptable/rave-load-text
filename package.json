@@ -1,0 +1,27 @@
+{
+	"name": "boot-byext",
+	"version": "0.0.1",
+	"description": "Adds non-module loading to boot.js based on file extensions.",
+	"main": "boot.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:unscriptable/boot-byext.git"
+	},
+	"keywords": [
+		"boot",
+		"es6",
+		"module",
+		"loader",
+		"amd",
+		"node",
+		"commonjs"
+	],
+	"author": "John Hann <john@unscriptable.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/unscriptable/boot-byext/issues"
+	}
+}
