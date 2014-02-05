@@ -2,7 +2,9 @@
 	"name": "boot-byext",
 	"version": "0.0.1",
 	"description": "Adds non-module loading to boot.js based on file extensions.",
+	"boot": "boot.js",
 	"main": "boot.js",
+	"moduleType": "node",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
