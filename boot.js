@@ -2,8 +2,10 @@
 /** @author Brian Cavalier */
 /** @author John Hann */
 var getExt = require('./lib/getExt');
+var translateFromString = require('./lib/translateFromString');
 var overrideIf = require('boot/lib/overrideIf');
 var fetchAsText = require('boot/pipeline/fetchAsText');
+var instantiateNode = require('boot/pipeline/instantiateNode');
 
 var extensions = {
 	'html': 1,
@@ -19,7 +21,9 @@ module.exports = {
 
 function createPipeline (context) {
 	var pipeline = {
-		fetch: fetchAsText
+		fetch: fetchAsText,
+		translate: translateFromString,
+		instantiate: instantiateNode
 	};
 	return {
 		applyTo: function (loader) {
