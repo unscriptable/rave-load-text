@@ -8,9 +8,10 @@ var fetchAsText = require('boot/pipeline/fetchAsText');
 var instantiateNode = require('boot/pipeline/instantiateNode');
 
 var extensions = {
+	'text': 1,
 	'html': 1,
 	'txt': 1,
-	'text': 1
+	'htm': 1
 };
 
 module.exports = {
