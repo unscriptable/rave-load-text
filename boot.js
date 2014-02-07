@@ -11,7 +11,10 @@ var extensions = {
 	'text': 1,
 	'html': 1,
 	'txt': 1,
-	'htm': 1
+	'htm': 1,
+	'css': 1,
+	'less': 1,
+	'scss': 1
 };
 
 module.exports = {
