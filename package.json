@@ -1,6 +1,6 @@
 {
-	"name": "boot-byext",
-	"version": "0.0.1",
+	"name": "boot-text-byext",
+	"version": "0.1.0",
 	"description": "Adds non-module loading to boot.js based on file extensions.",
 	"boot": "boot",
 	"main": "boot",
