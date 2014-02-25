@@ -1,6 +1,6 @@
-# boot-text-byext
+# rave-text-byext
 
-Adds text file loading to boot.js based on file extensions.
+Adds text file loading to rave.js based on file extensions.
 
 ## TODO:
 

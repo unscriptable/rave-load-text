@@ -3,9 +3,9 @@
 /** @author John Hann */
 var getExt = require('./lib/getExt');
 var translateFromString = require('./lib/translateFromString');
-var overrideIf = require('boot/lib/overrideIf');
-var fetchAsText = require('boot/pipeline/fetchAsText');
-var instantiateNode = require('boot/pipeline/instantiateNode');
+var overrideIf = require('rave/lib/overrideIf');
+var fetchAsText = require('rave/pipeline/fetchAsText');
+var instantiateNode = require('rave/pipeline/instantiateNode');
 
 var extensions = {
 	'text': 1,
@@ -17,23 +17,23 @@ var extensions = {
 	'scss': 1
 };
 
-module.exports = {
+module.exports = function (context) {
 
-	pipeline: createPipeline
+	// TODO: override extensions here if context.textByExt exists
+
+	return {
+		pipeline: createPipeline
+	};
 
 };
 
-function createPipeline (context) {
+function createPipeline (loader) {
 	var pipeline = {
 		fetch: fetchAsText,
 		translate: translateFromString,
 		instantiate: instantiateNode
 	};
-	return {
-		applyTo: function (loader) {
-			return overrideIf(hasSupportedExtension, loader, pipeline);
-		}
-	}
+	return overrideIf(hasSupportedExtension, loader, pipeline);
 }
 
 function hasSupportedExtension (name) {

@@ -1,15 +1,15 @@
 {
-	"name": "boot-text-byext",
+	"name": "rave-text-byext",
 	"version": "0.1.0",
-	"description": "Adds non-module loading to boot.js based on file extensions.",
-	"boot": "boot",
-	"main": "boot",
+	"description": "Adds non-module loading to rave.js based on file extensions.",
+	"rave": "rave",
+	"main": "rave",
 	"moduleType": "node",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:unscriptable/boot-byext.git"
+		"url": "git@github.com:unscriptable/rave-byext.git"
 	},
-	"keywords": [ "boot", "es6", "module", "loader", "amd", "node", "commonjs" ],
+	"keywords": [ "rave", "es6", "module", "loader", "amd", "node", "commonjs" ],
 	"author": "John Hann <john@unscriptable.com>",
 	"contributors": [
 		{
