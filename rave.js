@@ -1,41 +1,33 @@
 /** @license MIT License (c) copyright 2014 original authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
-var getExt = require('./lib/getExt');
-var translateFromString = require('./lib/translateFromString');
+var createFileExtFilter = require('rave/lib/createFileExtFilter');
 var overrideIf = require('rave/lib/overrideIf');
 var fetchAsText = require('rave/pipeline/fetchAsText');
-var instantiateNode = require('rave/pipeline/instantiateNode');
+var jsEncode = require('rave/lib/jsEncode');
+var instantiateScript = require('rave/pipeline/instantiateScript');
 
-var extensions = {
-	'text': 1,
-	'html': 1,
-	'txt': 1,
-	'htm': 1,
-	'css': 1,
-	'less': 1,
-	'scss': 1
-};
+var defaultExtensions = [ 'text', 'html', 'txt', 'htm' ];
 
 module.exports = function (context) {
+	var pipeline = {
+		fetch: fetchAsText,
+		translate: function (load) { return '"' + jsEncode(load.source) + '"'; },
+		instantiate: instantiateScript
+	};
 
-	// TODO: override extensions here if context.textByExt exists
+	// override extensions if supplied by dev
+	var extensions = 'textByext' in context
+		? context.textByext
+		: defaultExtensions;
 
 	return {
-		pipeline: createPipeline
+		pipeline: function (loader) {
+			return overrideIf(createFileExtFilter(extensions), loader, pipeline);
+		}
 	};
+
+
 
 };
 
-function createPipeline (loader) {
-	var pipeline = {
-		fetch: fetchAsText,
-		translate: translateFromString,
-		instantiate: instantiateNode
-	};
-	return overrideIf(hasSupportedExtension, loader, pipeline);
-}
-
-function hasSupportedExtension (name) {
-	return getExt(name) in extensions;
-}
