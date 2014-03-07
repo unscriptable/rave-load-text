@@ -10,7 +10,12 @@
 		"url": "git@github.com:unscriptable/rave-byext.git"
 	},
 	"keywords": [ "rave", "rave-extension", "es6", "module", "loader", "amd", "node", "commonjs" ],
-	"author": "John Hann <john@unscriptable.com>",
+	"maintainers": [
+	   {
+		 "name": "John Hann",
+		 "web": "http://unscriptable.com"
+	   }
+	 ],
 	"contributors": [
 		{
 		  "name": "John Hann",
