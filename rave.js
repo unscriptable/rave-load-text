@@ -17,8 +17,8 @@ module.exports = function (context) {
 	};
 
 	// override extensions if supplied by dev
-	var extensions = 'textByext' in context
-		? context.textByext
+	var extensions = 'loadText' in context
+		? context.loadText
 		: defaultExtensions;
 
 	return {
