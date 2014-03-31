@@ -3,17 +3,13 @@
 /** @author John Hann */
 var createFileExtFilter = require('rave/lib/createFileExtFilter');
 var overrideIf = require('rave/lib/overrideIf');
-var fetchAsText = require('rave/pipeline/fetchAsText');
-var jsEncode = require('rave/lib/jsEncode');
-var instantiateAmd = require('rave/pipeline/instantiateAmd');
+var es5Transform = require('rave/lib/es5Transform');
 
 var defaultExtensions = [ 'text', 'html', 'txt', 'htm' ];
 
 module.exports = function (context) {
 	var pipeline = {
-		fetch: fetchAsText,
-		translate: function (load) { return 'define("' + jsEncode(load.source) + '")'; },
-		instantiate: instantiateAmd
+		instantiate: instantiate
 	};
 
 	// override extensions if supplied by dev
@@ -27,7 +23,12 @@ module.exports = function (context) {
 		}
 	};
 
-
-
 };
 
+function instantiate (load) {
+	return {
+		execute: function () {
+			return new Module(es5Transform.toLoader(load.source));
+		}
+	}
+}
