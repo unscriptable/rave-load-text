@@ -22,3 +22,33 @@ an array of extensions or an object whose keys are file extensions.
 ```js
 context.loadText = ['less', 'template'];
 ```
+
+## Usage
+
+Importing a text file is easy.  Just import it as if it were a module.
+
+For CommonJS/node-formatted modules (or AMD-wrapped CommonJS):
+
+```js
+var template = require('./template.html');
+// ...
+template.replace(tokensRx, findValueForToken);
+```
+
+For classic AMD modules:
+
+```js
+define(['./template.html'], function (template) {
+	// ...
+	template.replace(tokensRx, findValueForToken);
+});
+```
+
+
+For ES6-formatted modules:
+
+```js
+import template from './template.html';
+// ...
+template.replace(tokensRx, findValueForToken);
+```
