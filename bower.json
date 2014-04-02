@@ -1,6 +1,6 @@
 {
 	"name": "rave-load-text",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "Adds text loading to rave.js based on file extensions.",
 	"rave": "rave",
 	"main": "rave",
@@ -10,7 +10,7 @@
 		"url": "git@github.com:unscriptable/rave-load-text.git"
 	},
 	"keywords": [ "rave", "rave-extension", "es6", "module", "loader", "amd", "node", "commonjs" ],
-	"author": "John Hann <john@unscriptable.com>",
+	"author": "John Hann (http://unscriptable.com)",
 	"contributors": [
 		{
 		  "name": "John Hann",
