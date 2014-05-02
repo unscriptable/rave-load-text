@@ -1,25 +1,40 @@
 {
 	"name": "rave-load-text",
-	"version": "0.2.0",
-	"description": "Adds text loading to rave.js based on file extensions.",
+	"version": "0.3.0",
+	"description": "Adds text file loading to RaveJS based on file extensions.",
+	"moduleType": [
+		"node"
+	],
+	"main": "rave.js",
 	"rave": "rave",
-	"main": "rave",
-	"moduleType": ["node"],
+	"keywords": [
+		"rave",
+		"rave-extension",
+		"text",
+		"loader",
+		"es6",
+		"module",
+		"node",
+		"commonjs"
+	],
+	"dependencies": {
+		"rave": "~0.1"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/unscriptable/rave-load-text",
+	"authors": [
+		"John Hann (http://unscriptable.com)",
+		"Brian Cavalier (http://hovercraftstudios.com)"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:unscriptable/rave-load-text.git"
 	},
-	"keywords": [ "rave", "rave-extension", "es6", "module", "loader", "amd", "node", "commonjs" ],
-	"author": "John Hann (http://unscriptable.com)",
-	"contributors": [
-		{
-		  "name": "John Hann",
-		  "web": "http://unscriptable.com"
-		},
-		{
-		  "name": "Brian Cavalier",
-		  "web": "http://hovercraftstudios.com"
-		}
-	],
-	"license": "MIT"
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
 }
