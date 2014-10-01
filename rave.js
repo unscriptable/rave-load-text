@@ -10,9 +10,9 @@ exports.instantiate = instantiate;
 
 function create (context) {
 	// override extensions if supplied by dev
-	var extensions = 'loadText' in context
-		? context.loadText
-		: defaultExtensions;
+	var env = context.env;
+	var extensions = (env.loadText && env.loadText.extensions)
+		|| defaultExtensions;
 
 	return {
 		load: [

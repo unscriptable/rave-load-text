@@ -7,20 +7,20 @@ extensions:
 
 `text` `html` `txt` `htm`
 
-You can change this list by adding a `loadText` property to the context.
-In HTML, this can be done by placing a `data-load-text` attribute on the
-`<html>` element.  The value of this element should be a comma-separated
-list of extensions.
-
-```html
-<html data-load-text="html,css">
-```
-
-When running `rave()` as a module, the `loadText` property may also be
-an array of extensions or an object whose keys are file extensions.
+You can change this list by adding a `loadText` rave env property.
+For example, to detect ".html" and ".template"
+extensions, add the following to your app's bower.json or package.json:
 
 ```js
-context.loadText = ['less', 'template'];
+{
+	"rave": {
+		"env": {
+			"loadText": {
+				"extensions": [ "html", "template" ]
+			}
+		}
+	}
+}
 ```
 
 ## Usage
